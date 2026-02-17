@@ -1,0 +1,10 @@
+{
+  "loginScenarios": {
+    "positive": {
+      "description": "Valid credentials should grant dashboard access"
+    },
+    "negative": {
+      "description": "Invalid credentials should display an error"
+    }
+  }
+}
