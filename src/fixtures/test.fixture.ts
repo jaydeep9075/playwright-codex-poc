@@ -4,11 +4,13 @@ import frameworkConfig from '@core/config/framework.config';
 import { ApiClient } from '@api/clients/ApiClient';
 import { AuthService } from '@api/services/AuthService';
 import { LoginPage } from '@pages/auth/LoginPage';
+import { RegisterPage } from '@pages/auth/RegisterPage';
 import { DashboardPage } from '@pages/dashboard/DashboardPage';
 
 type CustomFixtures = {
   config: typeof frameworkConfig;
   loginPage: LoginPage;
+  registerPage: RegisterPage;
   dashboardPage: DashboardPage;
   apiClient: ApiClient;
   authService: AuthService;
@@ -20,6 +22,9 @@ export const test = baseTest.extend<CustomFixtures>({
   },
   loginPage: async ({ page }, use) => {
     await use(new LoginPage(page));
+  },
+  registerPage: async ({ page }, use) => {
+    await use(new RegisterPage(page));
   },
   dashboardPage: async ({ page }, use) => {
     await use(new DashboardPage(page));
